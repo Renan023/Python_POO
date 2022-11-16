@@ -5,3 +5,6 @@ quanto a inserção de dados para o sexo só vai ser aceito 'MmFf' qualquer outr
 irá dar inicio ao ciclo e dar a média do aluno e se foi aprovado ou não. Se de recuperação irá informar o quanto de nota necessária para passar 
 Implementação da Herança e poliformismo 
 
+15/11/2022
+Acresscentado um for para determinar o ciclo de cadastro, na herança de Pessoa acrescentei idade, validação das opções e adição da cópia dos dados inseridas pelo POO
+em listas que são adicionadas na variavel list
