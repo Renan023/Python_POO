@@ -2,7 +2,7 @@ import char,datetime
 at = datetime.datetime.today().year
 list=[]
 class Pessoa:
-    def __init__(self,nome,nasc,idade,sexo):
+    def __init__(self,nome,nasc,idade ,sexo):
         self.nome = nome
         self.nasc = nasc
         self.idade = at - nasc
