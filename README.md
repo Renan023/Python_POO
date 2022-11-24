@@ -6,5 +6,9 @@ irá dar inicio ao ciclo e dar a média do aluno e se foi aprovado ou não. Se d
 Implementação da Herança e poliformismo 
 
 15/11/2022
-Acresscentado um for para determinar o ciclo de cadastro, na herança de Pessoa acrescentei idade, validação das opções e adição da cópia dos dados inseridas pelo POO
+Acrescentado um for para determinar o ciclo de cadastro, na herança de Pessoa acrescentei idade, validação das opções e adição da cópia dos dados inseridas pelo POO
 em listas que são adicionadas na variavel list
+
+24/11/2022
+Acrescentando as classes estágiario e funcionário e definido alguns métodos em funcionários , no pacote numeros e char foram adicionados algumas def 
+.No main foi adicionado a opção funcionário 
