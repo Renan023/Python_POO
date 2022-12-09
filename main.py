@@ -1,7 +1,7 @@
 import numeros, Pessoa,char, Estudante,Funcionario,Estagiario,Professor
 import time, datetime
 
-list = ['Cadastro(s) resumido(s) ']
+list = ['Cadastro(s) resumido(s) ']#lista que será guardada
 print(datetime.datetime.today().replace())
 xs = numeros.inteiro('Cadastro ')#vai definir quantos cadastros
 print('-'*100)
@@ -20,7 +20,7 @@ for c in range (xs):
                                  av= numeros.av('Avaliações '))
         list.append(p.__dict__.copy())#lista adicionada pelo dicionário
         time.sleep(0.4)
-        p.dados()
+        p.dados()#apresentação dos dados incluidos
         print('-'*100)
     elif op == 2:
         c += 1
@@ -80,9 +80,7 @@ for c in range (xs):
         time.sleep(0.6)
 
 print(list)
-"""cad = {f'Cadastro {xs} ': pd.Series([list],index=[xs])}
-res = pd.DataFrame(cad)
-print(res)"""
 
-print(f'Cadastro(s) total(is) {xs}')
+print(f'Cadastro(s) total(is) {xs}')#apresentação dos cadastros totais
 print(f'Estudante(s) {ces}, Estagiário(s) {ct}, Funcionário(s) {cf}, Professor(es) {cp}, Visitante(s) {cv}')
+#visualização do somatório de cada cadastro
