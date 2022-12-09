@@ -17,11 +17,18 @@ class Funcionario(Pessoa.Pessoa):
 
     def dados(self):
         super(Funcionario, self).dados()
+        print(f'Função {self.funcao}')
+        print(f'Salário base R$ {self.salario:.2f}')
+        print(f'Horas de trabalho diárias {self.tempo:.0f} hrs')
+        print(f'Horas semanais {self.carga:.0f} hrs')
+        print(f'Tempo de trabalho {self.exp:.0f} ano(s)')
+        print(f'Desconto no salário {self.desc} %')
+        print(f'Acréscimo no {self.plus} %')
         if self.tempo >10:
             bon = self.tempo * 110 / 100
             print(f'{self.nome} tem uma bonificação de 10% no salário este mês irá receber R$ {bon:.2f}')
         else:
-            print(f'Não houve nenhbuma bonificação seu salário ficou em R$ {self.salario:.2f}')
+            print(f'Não houve nenhuma bonificação seu salário ficou em R$ {self.salario:.2f}')
         if self.carga >=45 and self.exp >= 5 :
             plus = self.salario *145/100
             print(f'{self.nome} por seu desempenho seu salário irá receber um aumento fixo de R$ {plus:.2f}')

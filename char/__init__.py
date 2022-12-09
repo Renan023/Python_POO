@@ -58,3 +58,17 @@ def aluno(aluno):
             break
         else:
             return aluno
+
+def periodo(periodo):
+
+    while True:
+        try:
+            periodo = char(periodo).strip().upper()[0]
+            while periodo not in 'MmTtNn':
+                print('\033[31mDigite novamente uma informação válida\033[m')
+                periodo = char('Período[M/T/N] ').strip().upper()[0]
+        except (KeyboardInterrupt):
+            print('033[31mInterrompkido pelo  usuário\033[m')
+            break
+        else:
+            return periodo

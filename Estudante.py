@@ -10,9 +10,9 @@ class Estudante(Pessoa.Pessoa):
 
     def dados(self):
         super(Estudante, self).dados()
-        if self.aluno == 'Ss':
+        if self.aluno not in 'Nn':
             print(f'{self.nome} é aluno')
-            if self.av >= 6 and self. aluno == 'Ss':
+            if self.av >= 6 and self. aluno not in 'Nn':
                 print(f'{self.nome} foi aprovado com nota {self.av}')
             elif self.av >= 4 and self.av < 6 and self.aluno == True:
                 rec = 10 - self.av
@@ -20,6 +20,5 @@ class Estudante(Pessoa.Pessoa):
             else:
                 print(f'{self.nome} foi reprovado sua média {self.av}')
         else:
-            print(f'{self.nome} ainda não é aluno ')
-        print(f'{self.nome} sua nota é de {self.av}')
+            print(f'{self.nome} sua nota é de {self.av}')
 
