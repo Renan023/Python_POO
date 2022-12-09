@@ -16,4 +16,4 @@ Acrescentando as classes estágiario e funcionário e definido alguns métodos e
 09/12/2022
 Correção das def dados funcionários , estagiários e estudantes. Inclusão da classe herança Professores, Acrescentando a apresentação de dados após a inclusão de dados 
 em cada categoria, inclusão do time sleep para apresentação dos dados de confirmação e datetime no início , contador de cada cadastro progressivamente após cada cadastro 
-e no final contabiliza q quantidade de cadastro e cada cadastro de cada categoria 
+e no final contabiliza a quantidade total e cada cadastro de categoria 
