@@ -34,5 +34,3 @@ def av(notas):
         s = (s +n)#soma das avaliações
         m = s/(xs+1)#divisão da soma de avaliações e valor total definido por xs +1(já que a contagem começa do 0 o +1 só ajusta o valor)
     return m
-
-

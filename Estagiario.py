@@ -2,8 +2,8 @@ import Pessoa
 
 class Estagiario(Pessoa.Pessoa):
 
-    def __init__(self,nome,nasc,idade,sexo,tempo,horas,carga,periodo,b_aux):
-        super(Estagiario, self).__init__(nome,nasc,idade,sexo)
+    def __init__(self,cat,nome,nasc,idade,sexo,tempo,horas,carga,periodo,b_aux):
+        super().__init__(cat,nome,nasc,idade,sexo)
         self.tempo = tempo#tempo de contrato
         self.horas = horas # horas de trabalho por dia
         self.carga = carga # horas semanal
