@@ -17,3 +17,7 @@ Acrescentando as classes estágiario e funcionário e definido alguns métodos e
 Correção das def dados funcionários , estagiários e estudantes. Inclusão da classe herança Professores, Acrescentando a apresentação de dados após a inclusão de dados 
 em cada categoria, inclusão do time sleep para apresentação dos dados de confirmação e datetime no início , contador de cada cadastro progressivamente após cada cadastro 
 e no final contabiliza a quantidade total e cada cadastro de categoria 
+
+21/12/2022
+Correção na herança professores e no date time onde está o dia da semana e o horário melhorado .
+Importação e uso do arquivo .CSV onde fica registrado, localiza primeniramente e se não tiver cria e faz uso para o registro no arquivo 
