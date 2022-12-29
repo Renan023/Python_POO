@@ -21,3 +21,6 @@ e no final contabiliza a quantidade total e cada cadastro de categoria
 21/12/2022
 Correção na herança professores e no date time onde está o dia da semana e o horário melhorado .
 Importação e uso do arquivo .CSV onde fica registrado, localiza primeniramente e se não tiver cria e faz uso para o registro no arquivo 
+
+28/12/2022
+Lista no arquivo quando criado a string, a string retorna para o arquivo de texto mostrando os dados fornecidos pelo usuário 
