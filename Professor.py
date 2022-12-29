@@ -37,3 +37,21 @@ class Professor(Pessoa.Pessoa):
         else:
             print(f'O salário ficou em R$ {self.atual}')
             print(f'Infelizmente não foi cumprido os pré requisitos. Não desista ')
+
+
+    def write(self,jan, categoria):
+        try:
+            a = open(jan,'at')
+        except:
+            print(f'Erro no cadastro')
+        else:
+            a.write(f'Dados -> {categoria}')
+
+
+    def __str__(self):
+        super(Professor, self).__str__()
+        return f'Categoria {self.categoria} , Nome {self.nome} , Nasc {self.nasc} , Idade {self.idade},' \
+               f'Sexo {self.sexo} , Matéria {self.materia} ,  Função {self.funcao} ,Salário R$ {self.salario} ,' \
+               f' Horas diárias {self.tempo} , Hora semanal {self.carga} , Tempo de experiência {self.exp} ,' \
+               f' Desconto {self.desc} , Acréscimo {self.plus} , Salário com acréscimo {self.novo} , ' \
+               f'Salário total {self.atual}'

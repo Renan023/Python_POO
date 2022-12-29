@@ -24,3 +24,16 @@ class Estudante(Pessoa.Pessoa):
             print(f'Sua nota é de {self.av}')
 
 
+    def __str__(self):
+        super(Estudante, self).__str__()
+        return f'Categoria {self.categoria} , Nome {self.nome} , Nasc {self.nasc} , Idade {self.idade},' \
+               f'Sexo {self.sexo} , Aluno {self.aluno} , Média {self.av:.2f}'
+    
+    def write(self,jan, categoria):
+        try:
+            a = open(jan,'at')
+        except:
+            print(f'Erro no cadastro ')
+
+        else:
+            a.write(f'Dados -> {categoria}\n')

@@ -1,5 +1,6 @@
 import char,datetime
-import arquivos
+import re
+
 at = datetime.datetime.today().year
 
 class Pessoa:
@@ -11,6 +12,10 @@ class Pessoa:
         self.sexo = sexo
 
 
+    def __str__(self):
+        return f'Categoria {self.categoria} , Nome {self.nome} , Nasc {self.nasc} , Idade {self.idade},' \
+               f'Sexo {self.sexo}'
+
     def dados(self):
         char.principal('Confirmação')
         print(f'Nome {self.nome}')
@@ -18,7 +23,7 @@ class Pessoa:
         self.idade = at- self.nasc
         print(f'Idade {self.idade} anos')
         if self.idade >=18:
-            print(f'É de maior')
+            pass
         else:
             m= 18 - self.idade
             print(f'Falta {m} anos para chegar a maioridade')
@@ -34,4 +39,4 @@ class Pessoa:
             print(f'Erro no cadastro ')
 
         else:
-            a.write(f'Dados {categoria}\n')
+            a.write(f'Dados -> {categoria}\n')
