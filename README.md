@@ -24,3 +24,6 @@ Importação e uso do arquivo .CSV onde fica registrado, localiza primeniramente
 
 28/12/2022
 Lista no arquivo quando criado a string, a string retorna para o arquivo de texto mostrando os dados fornecidos pelo usuário 
+
+08/01/2023
+Correção do arquivo principal e as demais classes definidas, porém cada opção escolhida cria um arquivo CSV para o cadastro. Deste arquivo criado importo para o pandas e de lá crio um gráfico e dá uma noção de pessoas por sexo e idade cadastradas
