@@ -4,8 +4,7 @@ import re
 at = datetime.datetime.today().year
 
 class Pessoa:
-    def __init__(self,cat,nome,nasc,idade ,sexo):
-        self.categoria = cat
+    def __init__(self,nome,nasc,idade ,sexo):
         self.nome = nome
         self.nasc = nasc
         self.idade = at - nasc
@@ -13,8 +12,7 @@ class Pessoa:
 
 
     def __str__(self):
-        return f'Categoria {self.categoria} , Nome {self.nome} , Nasc {self.nasc} , Idade {self.idade},' \
-               f'Sexo {self.sexo}'
+        return f'{self.nome} , {self.nasc} ,{self.idade},{self.sexo}'
 
     def dados(self):
         char.principal('Confirmação')
@@ -32,11 +30,11 @@ class Pessoa:
         else:
             print('Sexo Feminino')
 
-    def write(self,jan, categoria):
+    def write(self,jan, nome):
         try:
             a = open(jan, 'at')
         except:
             print(f'Erro no cadastro ')
 
         else:
-            a.write(f'Dados -> {categoria}\n')
+            a.write(f'{nome}\n ')

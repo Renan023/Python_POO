@@ -1,10 +1,10 @@
-import Pessoa
-import arquivos
+from Pessoa import *
 
 
-class Estudante(Pessoa.Pessoa):
-    def __init__(self,cat,nome,nasc,idade,sexo, aluno,av=0):
-        super().__init__(cat,nome,nasc,idade, sexo)
+
+class Estudante(Pessoa):
+    def __init__(self,nome,nasc,idade,sexo, aluno,av=0):
+        super().__init__(nome,nasc,idade, sexo)
         self.aluno = aluno#aluno ou não - verdadeiro ou falso
         self.av = av#quantas avaliações e média
 
@@ -26,14 +26,14 @@ class Estudante(Pessoa.Pessoa):
 
     def __str__(self):
         super(Estudante, self).__str__()
-        return f'Categoria {self.categoria} , Nome {self.nome} , Nasc {self.nasc} , Idade {self.idade},' \
-               f'Sexo {self.sexo} , Aluno {self.aluno} , Média {self.av:.2f}'
+        return f'{self.nome} ,  {self.nasc} , {self.idade},' \
+               f'{self.sexo} , {self.aluno} , {self.av:.2f}'
     
-    def write(self,jan, categoria):
+    def write(self,jan, nome):
         try:
             a = open(jan,'at')
         except:
             print(f'Erro no cadastro ')
 
         else:
-            a.write(f'Dados -> {categoria}\n')
+            a.write(f'Dados -> {nome}\n')

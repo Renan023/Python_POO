@@ -1,6 +1,6 @@
-import Pessoa
+from Pessoa import *
 
-class Estagiario(Pessoa.Pessoa):
+class Estagiario(Pessoa):
 
     def __init__(self,cat,nome,nasc,idade,sexo,tempo,horas,carga,periodo,b_aux,noturno):
         super().__init__(cat,nome,nasc,idade,sexo)
@@ -30,19 +30,18 @@ class Estagiario(Pessoa.Pessoa):
             print(f'Bolsa auxilio R$ {self.b_aux:.2f} com adicional de 15% R$ {plus:.2f}')
 
 
-    def write(self,jan, categoria):
+    def write(self,jan, nome):
         try:
             a = open(jan,'at')
         except:
             print(f'Erro no cadastro')
         else:
-            a.write(f'Dados -> {categoria}')
+            a.write(f'Dados -> {nome}')
 
 
     def __str__(self):
         super(Estagiario, self).__str__()
-        return f'Categoria {self.categoria} , Nome {self.nome} , Nasc {self.nasc} , Idade {self.idade},' \
-               f'Sexo {self.sexo} , Contrato {self.tempo} , Horas diárias {self.horas} , Hora semanal {self.carga} , ' \
-               f'Período {self.periodo} , Bolsa auxilio {self.aux} , Bolsa Auxilio Total {self.noturno}'
+        return f'{self.nome} , {self.nasc} , {self.idade}, {self.sexo} , {self.tempo} , {self.horas} , ' \
+               f'{self.carga} , {self.periodo} , {self.aux} , {self.noturno}'
 
 

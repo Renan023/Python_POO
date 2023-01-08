@@ -1,6 +1,6 @@
-import Pessoa
+from Pessoa import *
 
-class Funcionario(Pessoa.Pessoa):
+class Funcionario(Pessoa):
 
     def __init__(self,cat, nome,nasc,idade,sexo,funcao,salario,tempo,carga,exp,desc,plus,novo,atual ):
         super().__init__(cat, nome,nasc,idade,sexo)
@@ -37,18 +37,17 @@ class Funcionario(Pessoa.Pessoa):
             print(f'Infelizmente não foi cumprido os pré requisitos de aumento. Não desista ')
 
 
-    def write(self,jan, categoria):
+    def write(self,jan, nome):
         try:
             a =open(jan,'at')
         except:
             print(f'Erro no cadastro')
         else:
-            a.write(f'Dados -> {categoria}')
+            a.write(f'Dados -> {nome}')
 
 
     def __str__(self):
         super(Funcionario, self).__str__()
-        return f'Categoria {self.categoria} , Nome {self.nome} , Nasc {self.nasc} , Idade {self.idade},' \
-               f'Sexo {self.sexo} , Função {self.funcao} ,Salário R$ {self.salario} , Horas diárias {self.tempo} ,' \
-               f' Hora semanal {self.carga} , Tempo de experiência {self.exp} , Desconto {self.desc} ,' \
-               f' Acréscimo {self.plus} , Salário com acréscimo {self.novo} , Salário total {self.atual}'
+        return f'{self.nome} , {self.nasc} , {self.idade}, {self.sexo} , {self.funcao} , {self.salario} ,' \
+               f'{self.tempo} , {self.carga} , {self.exp} , {self.desc} , {self.plus} , {self.novo} , ' \
+               f'{self.atual}'
