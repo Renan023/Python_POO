@@ -27,3 +27,6 @@ Lista no arquivo quando criado a string, a string retorna para o arquivo de text
 
 08/01/2023
 Correção do arquivo principal e as demais classes definidas, porém cada opção escolhida cria um arquivo CSV para o cadastro. Deste arquivo criado importo para o pandas e de lá crio um gráfico e dá uma noção de pessoas por sexo e idade cadastradas
+
+14/01/2023
+Somente adicionado os arquivos CSV restantes 
