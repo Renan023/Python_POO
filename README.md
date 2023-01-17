@@ -30,3 +30,7 @@ Correção do arquivo principal e as demais classes definidas, porém cada opç�
 
 14/01/2023
 Somente adicionado os arquivos CSV restantes 
+
+16/01/2023
+Implementado a def documentos com a validação do RG por digitos e CPF por digitos e cálculos, porém ainda não incluida e a conversão da idade de int para inteiro 
+das class e das class que sofrem com a herança
