@@ -2,7 +2,6 @@ import Pessoa, Estudante,Funcionario,Estagiario,Professor, time
 import datetime as dt
 from arquivos import *
 from char import *
-import re
 
 
 student, intern, employee, teacher, visitor = 'student.csv','intern.csv','employee.csv','teacher.csv','visitor.csv'#arquivo a ser procurado ou criado
@@ -39,7 +38,6 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
                                  av= av('Avaliações '))
         if p.sexo in 'Mm':#Contabiliza qual sexo do usuário inserido
             sm+=1
-            continue
         else:
             sf+=1
         list.append(p.__dict__.copy())#lista adicionada pelo dicionário
@@ -65,7 +63,6 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
                     b_aux= real('Bolsa auxilio R$ '),noturno=())
         if p2.sexo in 'Mm':
             sm+=1
-            continue
         else:
             sf+=1
         list.append(p2.__dict__.copy())
@@ -91,7 +88,6 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
                                      novo=(),atual=())
         if p3.sexo in 'Mm':
             sm+=1
-            continue
         else:
             sf+=1
         list.append(p3.__dict__.copy())
@@ -117,7 +113,6 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
                                  novo=(), atual=())
         if p4.sexo in 'Mm':
             sm+=1
-            continue
         else:
             sf+=1
         list.append(p4.__dict__.copy())
@@ -139,7 +134,6 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
                    nasc = inteiro('Nascimento '),idade=(),sexo = sexo('Sexo[M/F] '))
         if p5.sexo in 'Mm':
             sm+=1
-            continue
         else:
             sf+=1
         list.append(p5.__dict__.copy())#lista adicionada pelo dicionário

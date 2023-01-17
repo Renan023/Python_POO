@@ -2,8 +2,8 @@ from Pessoa import *
 
 class Estagiario(Pessoa):
 
-    def __init__(self,cat,nome,nasc,idade,sexo,tempo,horas,carga,periodo,b_aux,noturno):
-        super().__init__(cat,nome,nasc,idade,sexo)
+    def __init__(self,nome,nasc,idade,sexo,tempo,horas,carga,periodo,b_aux,noturno):
+        super().__init__(nome,nasc,idade,sexo)
         self.tempo = tempo#tempo de contrato
         self.horas = horas # horas de trabalho por dia
         self.carga = carga # horas semanal
@@ -41,7 +41,7 @@ class Estagiario(Pessoa):
 
     def __str__(self):
         super(Estagiario, self).__str__()
-        return f'{self.nome} , {self.nasc} , {self.idade}, {self.sexo} , {self.tempo} , {self.horas} , ' \
-               f'{self.carga} , {self.periodo} , {self.aux} , {self.noturno}'
+        return f'{self.nome} , {self.nasc} , {str(self.idade)}, {self.sexo} , {self.tempo} , {self.horas} , ' \
+               f'{self.carga} , {self.periodo} , {self.b_aux} , {self.noturno}'
 
 

@@ -3,8 +3,8 @@ from Pessoa import *
 
 class Professor(Pessoa):
 
-    def __init__(self,cat,nome,nasc,idade ,sexo ,salario, materia,tempo,carga,exp,desc,plus,novo,atual):
-        super().__init__(cat,nome,nasc,idade ,sexo)
+    def __init__(self,nome,nasc,idade ,sexo ,salario, materia,tempo,carga,exp,desc,plus,novo,atual):
+        super().__init__(nome,nasc,idade ,sexo)
         self.materia = materia
         self.salario = salario
         self.tempo = tempo  # quantas horas de trabalho
@@ -50,6 +50,6 @@ class Professor(Pessoa):
 
     def __str__(self):
         super(Professor, self).__str__()
-        return f'{self.nome} , {self.nasc} , {self.idade},  {self.sexo} , {self.materia} , {self.funcao} ,' \
+        return f'{self.nome} , {self.nasc} , {str(self.idade)},  {self.sexo} , {self.materia} , {self.funcao} ,' \
                f'{self.salario} , {self.tempo} , {self.carga} , {self.exp} , {self.desc} , {self.plus} ,' \
                f' {self.novo} ,  {self.atual}'

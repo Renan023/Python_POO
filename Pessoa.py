@@ -1,5 +1,4 @@
 import char,datetime
-import re
 
 at = datetime.datetime.today().year
 
@@ -12,7 +11,7 @@ class Pessoa:
 
 
     def __str__(self):
-        return f'{self.nome} , {self.nasc} ,{self.idade},{self.sexo}'
+        return f'{self.nome} , {str(self.nasc)} ,{self.idade},{self.sexo}'
 
     def dados(self):
         char.principal('Confirmação')
