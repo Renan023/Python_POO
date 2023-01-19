@@ -34,3 +34,7 @@ Somente adicionado os arquivos CSV restantes
 16/01/2023
 Implementado a def documentos com a validação do RG por digitos e CPF por digitos e cálculos, porém ainda não incluida e a conversão da idade de int para inteiro 
 das class e das class que sofrem com a herança
+
+18/01/2023
+Implementação da def comunicações com telefone/wpp e email, porém ainda não integrado.Integrado o MySQL atualmente nos visitantes por enquanto 
+
