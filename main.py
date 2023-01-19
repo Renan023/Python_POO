@@ -2,7 +2,15 @@ import Pessoa, Estudante,Funcionario,Estagiario,Professor, time
 import datetime as dt
 from arquivos import *
 from char import *
+import mysql.connector
 
+con = mysql.connector.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='cadastro',
+)
+cur = con.cursor()
 
 student, intern, employee, teacher, visitor = 'student.csv','intern.csv','employee.csv','teacher.csv','visitor.csv'#arquivo a ser procurado ou criado
 now = dt.datetime.now()#variável da data atual
@@ -122,20 +130,23 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
         line()
     elif op == 5:
         c += 1
-        print(f'Cadastro {c}'.center(100))
-        category('Visitante')
-        cv+=1
         if existir(visitor):  # Procura a existência do arquivo
             print(f'Arquivo Encontrado')
         else:
             print(f'Arquivo não encontrado')
             createfile(visitor)  # cria o arquivo inexistente
+        print(f'Cadastro {c}'.center(100))
+        category('Visitante')
+        cv+=1
         p5 = Pessoa.Pessoa(nome=char('Nome ').title(),#entrada de dados do visitante
                    nasc = inteiro('Nascimento '),idade=(),sexo = sexo('Sexo[M/F] '))
         if p5.sexo in 'Mm':
             sm+=1
         else:
             sf+=1
+        command = f'insert into visitor (Nome,Nasc,Idade,Sexo) values ("{p5.nome}","{p5.nasc}","{p5.idade}","{p5.sexo}")\n'
+        cur.execute(command)
+        con.commit()
         list.append(p5.__dict__.copy())#lista adicionada pelo dicionário
         p5.write(visitor, p5.__str__())
         time.sleep(0.4)
