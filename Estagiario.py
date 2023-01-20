@@ -2,8 +2,8 @@ from Pessoa import *
 
 class Estagiario(Pessoa):
 
-    def __init__(self,nome,nasc,idade,sexo,tempo,horas,carga,periodo,b_aux,noturno):
-        super().__init__(nome,nasc,idade,sexo)
+    def __init__(self,nome,rg,cpf,phone,email,nasc,idade,sexo,tempo,horas,carga,periodo,b_aux,noturno):
+        super().__init__(nome,rg,cpf,phone,email,nasc,idade,sexo)
         self.tempo = tempo#tempo de contrato
         self.horas = horas # horas de trabalho por dia
         self.carga = carga # horas semanal
@@ -36,7 +36,7 @@ class Estagiario(Pessoa):
         except:
             print(f'Erro no cadastro')
         else:
-            a.write(f'Dados -> {nome}')
+            a.write(f'{nome}')
 
 
     def __str__(self):

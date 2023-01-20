@@ -3,8 +3,8 @@ from Pessoa import *
 
 
 class Estudante(Pessoa):
-    def __init__(self,nome,nasc,idade,sexo, aluno,av=0):
-        super().__init__(nome,nasc,idade, sexo)
+    def __init__(self,nome,rg,cpf,phone,email,nasc,idade,sexo, aluno,av=0):
+        super().__init__(nome,rg,cpf,phone,email,nasc,idade, sexo)
         self.aluno = aluno#aluno ou não - verdadeiro ou falso
         self.av = av#quantas avaliações e média
 
@@ -36,4 +36,4 @@ class Estudante(Pessoa):
             print(f'Erro no cadastro ')
 
         else:
-            a.write(f'Dados -> {nome}\n')
+            a.write(f'{nome}\n')

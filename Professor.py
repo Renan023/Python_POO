@@ -3,8 +3,8 @@ from Pessoa import *
 
 class Professor(Pessoa):
 
-    def __init__(self,nome,nasc,idade ,sexo ,salario, materia,tempo,carga,exp,desc,plus,novo,atual):
-        super().__init__(nome,nasc,idade ,sexo)
+    def __init__(self,nome,rg,cpf,phone,email,nasc,idade ,sexo ,salario, materia,tempo,carga,exp,desc,plus,novo,atual):
+        super().__init__(nome,rg,cpf,phone,email,nasc,idade ,sexo)
         self.materia = materia
         self.salario = salario
         self.tempo = tempo  # quantas horas de trabalho
@@ -45,7 +45,7 @@ class Professor(Pessoa):
         except:
             print(f'Erro no cadastro')
         else:
-            a.write(f'Dados -> {nome}')
+            a.write(f'{nome}')
 
 
     def __str__(self):

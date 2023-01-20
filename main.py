@@ -48,6 +48,10 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
             sm+=1
         else:
             sf+=1
+        command = f'insert into student(Nome,Nasc,Idade,Sexo,Aluno,Média) values ("{p.nome}","{p.nasc}","{p.idade}",' \
+                  f'{p.sexo}","{p.aluno}","{p.av}"\n'
+        cur.execute(command)
+        con.commit()
         list.append(p.__dict__.copy())#lista adicionada pelo dicionário
         p.write(student, p.__str__())#escreve os dados do usuário no arquivo
         time.sleep(0.4)#tempo de espera de 4 segundos
@@ -60,7 +64,6 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
         else:
             print(f'Arquivo não encontrado')
             createfile(intern)  # cria o arquivo inexistente
-
         print(f'Cadastro {c}'.center(100))
         category('Estagiário')
         ct +=1
@@ -73,6 +76,11 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
             sm+=1
         else:
             sf+=1
+        command = f'insert into intern (Nome,Nasc,Idade,Sexo,Tempo de contrato,Horas Diárias,Horas Semanais,' \
+                  f'Período,Bolsa Auxilio,Bolsa Total) values("{p2.nome}","{p2.nasc}","{p2.idade}","{p2.sexo}",' \
+                  f'{p2.tempo}","{p2.horas}","{p2.carga}","{p2.periodo}","{p2.b_aux}","{p2.noturno}"\n'
+        cur.execute(command)
+        con.commit()
         list.append(p2.__dict__.copy())
         p2.write(intern,p2.__str__())
         p2.dados()
@@ -98,6 +106,11 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
             sm+=1
         else:
             sf+=1
+        command = f'insert into employee (Nome,Nasc,Idade,Sexo,Função,Salário,Horas Diárias,Horas Semanais,Tempo na empresa,' \
+                  f'Desconto,Acréscimo,Novo,Atual) values ("{p3.nome}","{p3.nasc}","{p3.idade}",{p3.sexo}","{p3.funcao},"' \
+                  f'{p3.salario}","{p3.tempo}","{p3.carga}","{p3.exp}","{p3.desc}","{p3.plus}","{p3.novo}","{p3.atual}"\n'
+        cur.execute(command)
+        con.commit()
         list.append(p3.__dict__.copy())
         p3.write(employee,p3.__str__())
         time.sleep(0.4)
@@ -119,6 +132,12 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
                                  carga=real('Horas semanais '), exp=real('Tempo na empresa '),
                                  desc=inteiro('Desconto(-) '), plus=inteiro('Aumento(+) '),
                                  novo=(), atual=())
+        command = f'insert into teacher (Nome,Nasc,Idade,Sexo,Matéria,Salário,Horas Diárias,Horas Semanais,' \
+                  f'Tempo na Empresa,Desconto,Aumento,Novo,Atual) values("{p4.nome}","{p4.nasc}","{p4.idade}",' \
+                  f'{p4.materia}","{p4.salario}","{p4.tempo}","{p4.carga}","{p4.exp}","{p4.desc}","{p4.plus}",' \
+                  f'"{p4.novo}","{p4.atual}\n'
+        cur.execute(command)
+        con.commit()
         if p4.sexo in 'Mm':
             sm+=1
         else:
