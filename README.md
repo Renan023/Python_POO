@@ -38,3 +38,5 @@ das class e das class que sofrem com a herança
 18/01/2023
 Implementação da def comunicações com telefone/wpp e email, porém ainda não integrado.Integrado o MySQL atualmente nos visitantes por enquanto 
 
+19/01/2023
+Inclusão nas heranças variáveis de documentos e comunicação e nas demais categorias incorporação do MySQL 
