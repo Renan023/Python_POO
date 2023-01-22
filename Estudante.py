@@ -26,8 +26,8 @@ class Estudante(Pessoa):
 
     def __str__(self):
         super(Estudante, self).__str__()
-        return f'{self.nome} ,  {self.nasc} , {str(self.idade)},' \
-               f'{self.sexo} , {self.aluno} , {self.av:.2f}'
+        return f'{self.nome} ,{self.rg},{self.cpf},{self.phone},{self.email},' \
+               f'  {self.nasc} , {str(self.idade)},{self.sexo} , {self.aluno} , {self.av:.2f}'
     
     def write(self,jan, nome):
         try:

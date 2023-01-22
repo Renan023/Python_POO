@@ -41,7 +41,8 @@ class Estagiario(Pessoa):
 
     def __str__(self):
         super(Estagiario, self).__str__()
-        return f'{self.nome} , {self.nasc} , {str(self.idade)}, {self.sexo} , {self.tempo} , {self.horas} , ' \
+        return f'{self.nome} ,{self.rg},{self.cpf},{self.phone},{self.email}, ' \
+               f'{self.nasc} , {str(self.idade)}, {self.sexo} , {self.tempo} , {self.horas} , ' \
                f'{self.carga} , {self.periodo} , {self.b_aux} , {self.noturno}'
 
 

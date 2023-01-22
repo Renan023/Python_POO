@@ -48,6 +48,7 @@ class Funcionario(Pessoa):
 
     def __str__(self):
         super(Funcionario, self).__str__()
-        return f'{self.nome} , {self.nasc} , {str(self.idade)}, {self.sexo} , {self.funcao} , {self.salario} ,' \
+        return f'{self.nome} ,{self.rg},{self.cpf},{self.phone},{self.email},' \
+               f'{self.nasc} , {str(self.idade)}, {self.sexo} , {self.funcao} , {self.salario} ,' \
                f'{self.tempo} , {self.carga} , {self.exp} , {self.desc} , {self.plus} , {self.novo} , ' \
                f'{self.atual}'

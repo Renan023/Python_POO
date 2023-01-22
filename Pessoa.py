@@ -15,7 +15,7 @@ class Pessoa:
 
 
     def __str__(self):
-        return f'{self.nome} , {self.nasc} ,{str(self.idade)},{self.sexo}'
+        return f'{self.nome} ,{self.rg},{self.cpf},{self.phone},{self.email}, {self.nasc} ,{str(self.idade)},{self.sexo}'
 
     def dados(self):
         char.principal('Confirmação')
