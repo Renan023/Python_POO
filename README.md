@@ -40,3 +40,6 @@ Implementação da def comunicações com telefone/wpp e email, porém ainda nã
 
 19/01/2023
 Inclusão nas heranças variáveis de documentos e comunicação e nas demais categorias incorporação do MySQL 
+
+22/01/2023
+Correção do documentos e comunicação. Acrescentado nas categorias os documentos e comunicação
