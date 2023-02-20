@@ -43,3 +43,6 @@ Inclusão nas heranças variáveis de documentos e comunicação e nas demais ca
 
 22/01/2023
 Correção do documentos e comunicação. Acrescentado nas categorias os documentos e comunicação
+
+20/02/2023
+Atualização no arquivo principal, CSV, e  inclusão das demais categorias no cadastro do SQL
