@@ -51,8 +51,9 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
             sm+=1
         else:
             sf+=1
-        command = f'insert into student(Nome,Nasc,Idade,Sexo,Aluno,Média) values ("{p.nome}","{p.rg}","{p.cpf}",' \
-                  f'"{p.phone}","{p.email},""{p.nasc}","{p.idade}","{p.sexo}",{p.aluno}","{p.av}"\n'
+        command = f'insert into student(Nome,RG,CPF,Telefone,Email,Nasc,Idade,Sexo,Aluno,Avaliacao) values ' \
+                  f'("{p.nome}","{p.rg}","{p.cpf}","{p.phone}","{p.email}","{p.nasc}","{p.idade}","{p.sexo}",' \
+                  f'"{p.aluno}","{p.av}")\n'
         cur.execute(command)
         con.commit()
         list.append(p.__dict__.copy())#lista adicionada pelo dicionário
@@ -80,10 +81,10 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
             sm+=1
         else:
             sf+=1
-        command = f'insert into intern (Nome,Nasc,Idade,Sexo,Tempo de contrato,Horas Diárias,Horas Semanais,' \
-                  f'Período,Bolsa Auxilio,Bolsa Total) values("{p2.nome}","{p2.rg}","{p2.cpf}","{p2.phone}","{p2.email}",' \
+        command = f'insert into intern (Nome,RG,CPF,Telefone,Email,Nasc,Idade,Sexo,Contrato,Diarias,Semanais,' \
+                  f'Periodo,Bolsa_aux,Total) values("{p2.nome}","{p2.rg}","{p2.cpf}","{p2.phone}","{p2.email}",' \
                   f'"{p2.nasc}","{p2.idade}","{p2.sexo}","{p2.tempo}","{p2.horas}","{p2.carga}","{p2.periodo}",' \
-                  f'"{p2.b_aux}","{p2.noturno}"\n'
+                  f'"{p2.b_aux}","{p2.noturno}")\n'
         cur.execute(command)
         con.commit()
         list.append(p2.__dict__.copy())
@@ -112,10 +113,10 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
             sm+=1
         else:
             sf+=1
-        command = f'insert into employee (Nome,Nasc,Idade,Sexo,Função,Salário,Horas Diárias,Horas Semanais,Tempo na empresa,' \
-                  f'Desconto,Acréscimo,Novo,Atual) values ("{p3.nome}","{p3.rg}","{p3.cpf}","{p3.phone}","{p3.email}",' \
-                  f'"{p3.nasc}","{p3.idade}",{p3.sexo}","{p3.funcao},"{p3.salario}","{p3.tempo}","{p3.carga}",' \
-                  f'"{p3.exp}","{p3.desc}","{p3.plus}","{p3.novo}","{p3.atual}"\n'
+        command = f'insert into employee (Nome,RG,CPF,Telefone,Email,Nasc,Idade,Sexo,Funcao,Salario,Diarias,Semanais,Empresa,' \
+                  f'Desconto,Acrescimo,Novo,Total) values ("{p3.nome}","{p3.rg}","{p3.cpf}","{p3.phone}","{p3.email}",' \
+                  f'"{p3.nasc}","{p3.idade}","{p3.sexo}","{p3.funcao}","{p3.salario}","{p3.tempo}","{p3.carga}",' \
+                  f'"{p3.exp}","{p3.desc}","{p3.plus}","{p3.novo}","{p3.atual}")\n'
         cur.execute(command)
         con.commit()
         list.append(p3.__dict__.copy())
@@ -140,10 +141,10 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
                                  carga=real('Horas semanais '), exp=real('Tempo na empresa '),
                                  desc=inteiro('Desconto(-) '), plus=inteiro('Aumento(+) '),
                                  novo=(), atual=())
-        command = f'insert into teacher (Nome,Nasc,Idade,Sexo,Matéria,Salário,Horas Diárias,Horas Semanais,' \
-                  f'Tempo na Empresa,Desconto,Aumento,Novo,Atual) values("{p4.nome}","{p4.rg}","{p4.cpf}","{p4.phone}","{p4.email}",' \
-                  f'"{p4.nasc}","{p4.idade}","{p4.materia}","{p4.salario}","{p4.tempo}","{p4.carga}","{p4.exp}",' \
-                  f'"{p4.desc}","{p4.plus}","{p4.novo}","{p4.atual}\n'
+        command = f'insert into teacher (Nome,RG,CPF,Telefone,Email,Nasc,Idade,Sexo,Materia,Salario,Diarias,Semanais,' \
+                  f'Empresa,Desconto,Acrescimo,Novo,Total) values("{p4.nome}","{p4.rg}","{p4.cpf}","{p4.phone}","{p4.email}",' \
+                  f'"{p4.nasc}","{p4.idade}","{p4.sexo}","{p4.materia}","{p4.salario}","{p4.tempo}","{p4.carga}","{p4.exp}",' \
+                  f'"{p4.desc}","{p4.plus}","{p4.novo}","{p4.atual}")\n'
         cur.execute(command)
         con.commit()
         if p4.sexo in 'Mm':
@@ -173,7 +174,8 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
             sm+=1
         else:
             sf+=1
-        command = f'insert into visitor (Nome,Nasc,Idade,Sexo) values ("{p5.nome}","{p5.rg}","{p5.cpf}","{p5.phone}","{p5.email}",' \
+        command = f'insert into visitor (Nome,RG,CPF,Telefone,Email,Nasc,Idade,Sexo) values ' \
+                  f'("{p5.nome}","{p5.rg}","{p5.cpf}","{p5.phone}","{p5.email}",' \
                   f'"{p5.nasc}","{p5.idade}","{p5.sexo}")\n'
         cur.execute(command)
         con.commit()

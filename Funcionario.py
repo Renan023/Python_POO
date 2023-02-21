@@ -12,7 +12,7 @@ class Funcionario(Pessoa):
         self.desc = desc#desconto
         self.plus = plus#aumento
         self.novo = self.salario*plus/100+self.salario#novo salário
-        self.atual = self.novo*desc/100+self.novo#salário final
+        self.atual = self.novo*(-desc)/100+self.novo#salário final
 
 
     def dados(self):
