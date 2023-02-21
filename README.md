@@ -46,3 +46,7 @@ Correção do documentos e comunicação. Acrescentado nas categorias os documen
 
 20/02/2023
 Atualização no arquivo principal, CSV, e  inclusão das demais categorias no cadastro do SQL
+
+21/02/2023
+Correção no arquivo principal, e na classes Pessoa,Estagiário,Professor, Funcionário,Estudante.
+Correção no arquivo cadastro para capturar os dados do python para o mySQL
