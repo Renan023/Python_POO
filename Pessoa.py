@@ -1,7 +1,10 @@
 import char,datetime
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 at = datetime.datetime.today().year
-
+remetente = 'eijieizo@gmail.com'
 class Pessoa:
     def __init__(self,nome,rg,cpf,phone,email,nasc,idade ,sexo):
         self.nome = nome
@@ -45,3 +48,21 @@ class Pessoa:
 
         else:
             a.write(f'{nome}\n ')
+
+    def send_mail(self,assunto, de, para):
+        body = f"Cadastro de {self.nome}\n" \
+               f"{self.nome} fez o cadastro de visitante, no qual o RG {self.rg} e CPF {self.cpf}" \
+               f"seu ano de nascimento é {self.nasc} com idade {self.idade} anos, no ano corrente e sexo {self.sexo}"
+        msg = MIMEMultipart()
+        msg['Subject'] = "" + assunto
+        msg['From'] = "" + de
+        msg['To'] = "" + para
+        password = "hyxzgercfczyggxz"
+        msg.attach(MIMEText(body, 'plain'))
+
+        server = smtplib.SMTP('smtp.gmail.com', port=587)
+        server.starttls()
+        server.login(msg['From'], password)
+        server.sendmail(msg['From'], msg['To'], msg.as_string())
+        server.quit()
+

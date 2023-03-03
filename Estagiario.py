@@ -1,4 +1,7 @@
 from Pessoa import *
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import smtplib
 
 class Estagiario(Pessoa):
 
@@ -46,3 +49,20 @@ class Estagiario(Pessoa):
                f'{self.carga} , {self.periodo} , {self.b_aux} , {self.noturno}'
 
 
+    def send_mail(self,assunto, de, para):
+        body = f"Estagiário {self.nome}\n" \
+               f"{self.nome} portador do RG {self.rg} e CPF {self.cpf} nascido no ano de {self.nasc} com idade no " \
+               f"ano corrente de {self.idade} anos, no sexo {self.sexo}, estagiando com o contrato de {self.tempo} ano(s)" \
+               f" no período {self.periodo}, recebendo uma bolsa auxilio de R$ {self.b_aux}"
+        msg = MIMEMultipart()
+        msg['Subject'] = "" + assunto
+        msg['From'] = "" + de
+        msg['To'] = "" + para
+        password = "hyxzgercfczyggxz"
+        msg.attach(MIMEText(body,'plain'))
+
+        server = smtplib.SMTP('smtp.gmail.com',port=587)
+        server.starttls()
+        server.login(msg['From'],password)
+        server.sendmail(msg['From'],msg['To'],msg.as_string())
+        server.quit()

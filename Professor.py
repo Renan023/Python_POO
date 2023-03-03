@@ -1,5 +1,7 @@
 from Pessoa import *
-
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import smtplib
 
 class Professor(Pessoa):
 
@@ -54,3 +56,22 @@ class Professor(Pessoa):
                f'{self.nasc} , {str(self.idade)},  {self.sexo} , {self.materia} , ' \
                f'{self.salario} , {self.tempo} , {self.carga} , {self.exp} , {self.desc} , {self.plus} ,' \
                f'{self.novo} ,  {self.atual}'
+
+
+    def send_mail(self,assunto, de, para):
+        body = f"Professor {self.nome}\n" \
+               f"{self.nome} portador do RG {self.rg} e CPF {self.cpf}, nascido no ano {self.nasc} com idade no " \
+               f"ano corrente {self.idade} anos, de sexo {self.sexo} leciona matéria {self.materia} seu salário base é de R$" \
+               f"{self.salario} seu salário stual com descontos ou acréscimos é de R$ {self.atual}"
+        msg = MIMEMultipart()
+        msg['Subject'] =  "" + assunto
+        msg['From'] = "" + de
+        msg['To'] = "" + para
+        password = "hyxzgercfczyggxz"
+        msg.attach(MIMEText(body,'plain'))
+
+        server = smtplib.SMTP('smtp.gmail.com', port=587)
+        server.starttls()
+        server.login(msg['From'],password)
+        server.sendmail(msg['From'],msg['To'],msg.as_string())
+        server.quit()

@@ -17,7 +17,8 @@ cur = con.cursor()
 student, intern, employee, teacher, visitor = 'student.csv','intern.csv','employee.csv','teacher.csv','visitor.csv'#arquivo a ser procurado ou criado
 now = dt.datetime.now()#variável da data atual
 list = ['Cadastro(s) resumido(s) ']#lista que será guardada
-
+remetente = 'eijieizo@gmail.com'
+senha = "blljijnqaqqteaer"
 
 line()
 print(now.strftime('%a,%d,%B,%Y'))#data formatada em semana, dia, mês e ano
@@ -59,6 +60,7 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
         list.append(p.__dict__.copy())#lista adicionada pelo dicionário
         p.write(student, p.__str__())#escreve os dados do usuário no arquivo
         time.sleep(0.4)#tempo de espera de 4 segundos
+        p.send_mail(p.nome,remetente,p.email)
         p.dados()#apresentação dos dados incluidos
         line()
     elif op == 2:
@@ -91,6 +93,7 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
         p2.write(intern,p2.__str__())
         p2.dados()
         time.sleep(0.4)
+        p2.send_mail(p2.nome,remetente,p2.email)
         line()
     elif op == 3:
         c += 1
@@ -122,6 +125,7 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
         list.append(p3.__dict__.copy())
         p3.write(employee,p3.__str__())
         time.sleep(0.4)
+        p3.send_mail(p3.nome, remetente, p3.email)
         p3.dados()
         line()
     elif op == 4:
@@ -154,6 +158,7 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
         list.append(p4.__dict__.copy())
         p4.write(teacher,p4.__str__())
         time.sleep(0.4)
+        p4.send_mail(p4.nome,remetente,p4.email)
         p4.dados()
         line()
     elif op == 5:
@@ -182,6 +187,7 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
         list.append(p5.__dict__.copy())#lista adicionada pelo dicionário
         p5.write(visitor, p5.__str__())
         time.sleep(0.4)
+        p5.send_mail(p5.nome,remetente,p5.email)
         p5.dados()
         line()
         time.sleep(0.6)

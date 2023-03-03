@@ -1,6 +1,7 @@
+import smtplib
 from Pessoa import *
-
-
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 class Estudante(Pessoa):
     def __init__(self,nome,rg,cpf,phone,email,nasc,idade,sexo, aluno,av=0):
@@ -37,3 +38,21 @@ class Estudante(Pessoa):
 
         else:
             a.write(f'{nome}\n')
+
+
+    def send_mail(self,assunto, de, para):
+        body = f"Aluno {self.nome}\n" \
+               f"{self.nome},RG {self.rg} e CPF {self.cpf} nascido no ano {self.nasc}, cuja idade no ano corrente" \
+               f"é de {self.idade} anos, sua média é de {self.av}"
+        msg = MIMEMultipart()
+        msg['Subject'] = "" + assunto
+        msg['From'] = "" + de
+        msg['To'] = "" + para
+        password = "hyxzgercfczyggxz"
+        msg.attach(MIMEText(body,'plain'))
+
+        server = smtplib.SMTP('smtp.gmail.com',port=587)
+        server.starttls()
+        server.login(msg['From'],password)
+        server.sendmail(msg['From'],msg['To'],msg.as_string())
+        server.quit()
