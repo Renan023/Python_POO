@@ -50,3 +50,6 @@ Atualização no arquivo principal, CSV, e  inclusão das demais categorias no c
 21/02/2023
 Correção no arquivo principal, e na classes Pessoa,Estagiário,Professor, Funcionário,Estudante.
 Correção no arquivo cadastro para capturar os dados do python para o mySQL
+
+02/03/2023
+Após o cadastro o programa manda um email para a classe respectiva em que foi acessada
