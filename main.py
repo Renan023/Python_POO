@@ -5,6 +5,7 @@ from arquivos import *
 import mysql.connector
 from documents import *
 from communication import *
+from selenium import webdriver
 
 
 con = mysql.connector.connect(
@@ -209,3 +210,4 @@ print(f'Estudante(s) {ces}, Estagiário(s) {ct}, Funcionário(s) {cf}, Professor
 line()
 print(f'Sexo Masculino {sm}                Sexo Feminino {sf}'.center(80))#contabilização total de cadastros do sexo
 # masculino e feminino
+agradecimento()

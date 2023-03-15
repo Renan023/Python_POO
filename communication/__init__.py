@@ -1,12 +1,15 @@
+import time
+from selenium import webdriver
 from char import *
+
 
 def phone(phone):
     while True:
         try:
             phone = char(phone)
-            if len(phone) == 13:
+            if len(phone) == 15:
                 print(f'\033[31mDigite um telefone válido\033[m')
-                while len(phone) != 13:
+                while len(phone) != 15:
                     print('\033[31mTelefone/Wpp inválido\033[m')
                     phone = char('Telefone/Wpp ')
         except(KeyboardInterrupt):
@@ -32,7 +35,9 @@ def email(email):
         else:
             return email
 
-
-
-
+def agradecimento():
+    browser = webdriver.Firefox()
+    browser.maximize_window()
+    browser.get('file:///C:/Users/user/Downloads/IMAGEM-DO-AWEBIC-11-1-1536x806.webp')
+    time.sleep(20)
 
