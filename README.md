@@ -53,3 +53,6 @@ Correção no arquivo cadastro para capturar os dados do python para o mySQL
 
 02/03/2023
 Após o cadastro o programa manda um email para a classe respectiva em que foi acessada
+
+14/03/2023
+Foi implementando a automatização para mandar mensagem no wpp em cada classe com uma respectiva mensagem. Precisa somente autenticar e dar o enter para enviar a mensagem 
