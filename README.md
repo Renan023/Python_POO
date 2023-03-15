@@ -56,3 +56,6 @@ Após o cadastro o programa manda um email para a classe respectiva em que foi a
 
 14/03/2023
 Foi implementando a automatização para mandar mensagem no wpp em cada classe com uma respectiva mensagem. Precisa somente autenticar e dar o enter para enviar a mensagem 
+
+14/03/2023
+foi incluido por automatização um agradecimento no final do programa principal 
