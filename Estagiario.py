@@ -2,6 +2,8 @@ from Pessoa import *
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
+import time
+from selenium import webdriver
 
 class Estagiario(Pessoa):
 
@@ -53,12 +55,12 @@ class Estagiario(Pessoa):
         body = f"Estagiário {self.nome}\n" \
                f"{self.nome} portador do RG {self.rg} e CPF {self.cpf} nascido no ano de {self.nasc} com idade no " \
                f"ano corrente de {self.idade} anos, no sexo {self.sexo}, estagiando com o contrato de {self.tempo} ano(s)" \
-               f" no período {self.periodo}, recebendo uma bolsa auxilio de R$ {self.b_aux}"
+               f" no período {self.periodo}, recebendo uma bolsa auxilio de R$ {self.noturno}"
         msg = MIMEMultipart()
         msg['Subject'] = "" + assunto
         msg['From'] = "" + de
         msg['To'] = "" + para
-        password = "hyxzgercfczyggxz"
+        password = "iljotyvyttakosoh"
         msg.attach(MIMEText(body,'plain'))
 
         server = smtplib.SMTP('smtp.gmail.com',port=587)
@@ -66,3 +68,16 @@ class Estagiario(Pessoa):
         server.login(msg['From'],password)
         server.sendmail(msg['From'],msg['To'],msg.as_string())
         server.quit()
+
+
+    def wpp(self):
+
+        texto = f'{self.nome} sua bolsa auxilio total de estagiário é {self.noturno}. Consulte o email para informações ' \
+                f'mais detalhadas'
+        link = f"https://web.whatsapp.com/send?phone={self.phone}&text={texto}"
+        browser = webdriver.Firefox()
+        browser.maximize_window()
+        browser.get('https://web.whatsapp.com')
+        time.sleep(20)
+        browser.get(link)
+        time.sleep(40)

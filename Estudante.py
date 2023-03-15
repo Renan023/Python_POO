@@ -1,8 +1,9 @@
-import smtplib
 from Pessoa import *
+import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
+from selenium import webdriver
+import time
 class Estudante(Pessoa):
     def __init__(self,nome,rg,cpf,phone,email,nasc,idade,sexo, aluno,av=0):
         super().__init__(nome,rg,cpf,phone,email,nasc,idade, sexo)
@@ -48,7 +49,7 @@ class Estudante(Pessoa):
         msg['Subject'] = "" + assunto
         msg['From'] = "" + de
         msg['To'] = "" + para
-        password = "hyxzgercfczyggxz"
+        password = "iljotyvyttakosoh"
         msg.attach(MIMEText(body,'plain'))
 
         server = smtplib.SMTP('smtp.gmail.com',port=587)
@@ -56,3 +57,16 @@ class Estudante(Pessoa):
         server.login(msg['From'],password)
         server.sendmail(msg['From'],msg['To'],msg.as_string())
         server.quit()
+
+
+    def wpp(self):
+
+        texto = f'{self.nome} foi confirmado que é aluno e sua {self.av}. Consulte o email para informações' \
+                f' mais detalhadas'
+        link = f"https://web.whatsapp.com/send?phone={self.phone}&text={texto}"
+        browser = webdriver.Firefox()
+        browser.maximize_window()
+        browser.get('https://web.whatsapp.com')
+        time.sleep(20)
+        browser.get(link)
+        time.sleep(20)

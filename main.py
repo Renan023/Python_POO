@@ -6,6 +6,7 @@ import mysql.connector
 from documents import *
 from communication import *
 
+
 con = mysql.connector.connect(
     host='localhost',
     user='root',
@@ -62,6 +63,7 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
         time.sleep(0.4)#tempo de espera de 4 segundos
         p.send_mail(p.nome,remetente,p.email)
         p.dados()#apresentação dos dados incluidos
+        p.wpp()
         line()
     elif op == 2:
         c += 1
@@ -94,6 +96,7 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
         p2.dados()
         time.sleep(0.4)
         p2.send_mail(p2.nome,remetente,p2.email)
+        p2.wpp()
         line()
     elif op == 3:
         c += 1
@@ -127,6 +130,7 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
         time.sleep(0.4)
         p3.send_mail(p3.nome, remetente, p3.email)
         p3.dados()
+        p3.wpp()
         line()
     elif op == 4:
         c += 1
@@ -160,6 +164,7 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
         time.sleep(0.4)
         p4.send_mail(p4.nome,remetente,p4.email)
         p4.dados()
+        p4.wpp()
         line()
     elif op == 5:
         c += 1
@@ -189,13 +194,13 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
         time.sleep(0.4)
         p5.send_mail(p5.nome,remetente,p5.email)
         p5.dados()
+        p5.wpp()
         line()
         time.sleep(0.6)
 
 ll = 0
 for ll in list:
     print(ll)#retorna cada cadastro localizado na lista
-
 time.sleep(0.6)#tempo de espera de 6 segundos
 line()
 print(f'Cadastro(s) total(is) {xs}')#apresentação dos cadastros totais

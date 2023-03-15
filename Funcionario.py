@@ -2,6 +2,8 @@ from Pessoa import *
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from selenium import webdriver
+import time
 
 class Funcionario(Pessoa):
 
@@ -66,7 +68,7 @@ class Funcionario(Pessoa):
         msg['Subject'] = "" + assunto
         msg['From'] = "" + de
         msg['To'] = "" + para
-        password = "hyxzgercfczyggxz"
+        password = "iljotyvyttakosoh"
         msg.attach(MIMEText(body,'plain'))
 
         server = smtplib.SMTP('smtp.gmail.com', port=587)
@@ -74,3 +76,15 @@ class Funcionario(Pessoa):
         server.login(msg['From'],password)
         server.sendmail(msg['From'],msg['To'],msg.as_string())
         server.quit()
+
+
+    def wpp(self):
+
+        texto = f' Funcionário {self.nome} seu salário R$ {self.atual}. Para informações mais detalhadas consulte o email'
+        link = f"https://web.whatsapp.com/send?phone={self.phone}&text={texto}"
+        browser = webdriver.Firefox()
+        browser.maximize_window()
+        browser.get('https://web.whatsapp.com')
+        time.sleep(20)
+        browser.get(link)
+        time.sleep(40)

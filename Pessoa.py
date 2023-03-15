@@ -2,6 +2,8 @@ import char,datetime
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from selenium import webdriver
+import time
 
 at = datetime.datetime.today().year
 remetente = 'eijieizo@gmail.com'
@@ -57,7 +59,7 @@ class Pessoa:
         msg['Subject'] = "" + assunto
         msg['From'] = "" + de
         msg['To'] = "" + para
-        password = "hyxzgercfczyggxz"
+        password = "iljotyvyttakosoh"
         msg.attach(MIMEText(body, 'plain'))
 
         server = smtplib.SMTP('smtp.gmail.com', port=587)
@@ -66,3 +68,14 @@ class Pessoa:
         server.sendmail(msg['From'], msg['To'], msg.as_string())
         server.quit()
 
+    def wpp(self):
+
+        texto = f'Olá {self.nome}, você terminou seu cadastro e seja muito bem vindo, você receberá também um e-mail confirmando o cadastro. Obrigado =]'
+        link = f"https://web.whatsapp.com/send?phone={self.phone}&text={texto}"
+        browser = webdriver.Firefox()
+        browser.maximize_window()
+        browser.get('https://web.whatsapp.com')
+        time.sleep(20)
+        browser.get(link)
+        time.sleep(20)
+        
