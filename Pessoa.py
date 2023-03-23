@@ -6,7 +6,7 @@ from selenium import webdriver
 import time
 
 at = datetime.datetime.today().year
-remetente = 'eijieizo@gmail.com'
+remetente = ''
 class Pessoa:
     def __init__(self,nome,rg,cpf,phone,email,nasc,idade ,sexo):
         self.nome = nome
@@ -42,15 +42,13 @@ class Pessoa:
         else:
             print('Sexo Feminino')
 
-    def write(self,jan, nome):
+    def write(self, jan, nome):
         try:
             a = open(jan, 'at')
         except:
-            print(f'Erro no cadastro ')
-
+            print(f'Erro no cadastro')
         else:
-            a.write(f'{nome}\n ')
-
+            a.write(f'{nome}')
     def send_mail(self,assunto, de, para):
         body = f"Cadastro de {self.nome}\n" \
                f"{self.nome} fez o cadastro de visitante, no qual o RG {self.rg} e CPF {self.cpf}" \
@@ -59,7 +57,7 @@ class Pessoa:
         msg['Subject'] = "" + assunto
         msg['From'] = "" + de
         msg['To'] = "" + para
-        password = "iljotyvyttakosoh"
+        password = ""
         msg.attach(MIMEText(body, 'plain'))
 
         server = smtplib.SMTP('smtp.gmail.com', port=587)
@@ -78,4 +76,3 @@ class Pessoa:
         time.sleep(20)
         browser.get(link)
         time.sleep(20)
-        

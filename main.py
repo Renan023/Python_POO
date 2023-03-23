@@ -1,11 +1,10 @@
-import Pessoa, Estudante,Funcionario,Estagiario,Professor, time
+import Pessoa, Estudante,Funcionario,Estagiario,Professor
 
 import datetime as dt
 from arquivos import *
 import mysql.connector
 from documents import *
 from communication import *
-from selenium import webdriver
 
 
 con = mysql.connector.connect(
@@ -19,7 +18,7 @@ cur = con.cursor()
 student, intern, employee, teacher, visitor = 'student.csv','intern.csv','employee.csv','teacher.csv','visitor.csv'#arquivo a ser procurado ou criado
 now = dt.datetime.now()#variável da data atual
 list = ['Cadastro(s) resumido(s) ']#lista que será guardada
-remetente = 'eijieizo@gmail.com'
+remetente = ''
 senha = "blljijnqaqqteaer"
 
 line()
@@ -191,11 +190,12 @@ for c in range (xs):#vai pedir com qual tipo de cadastro quer realizar
         cur.execute(command)
         con.commit()
         list.append(p5.__dict__.copy())#lista adicionada pelo dicionário
-        p5.write(visitor, p5.__str__())
+        p5.write(visitor,p5.__str__())
         time.sleep(0.4)
         p5.send_mail(p5.nome,remetente,p5.email)
         p5.dados()
         p5.wpp()
+        time.sleep(10)
         line()
         time.sleep(0.6)
 
