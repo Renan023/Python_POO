@@ -49,7 +49,7 @@ class Estudante(Pessoa):
         msg['Subject'] = "" + assunto
         msg['From'] = "" + de
         msg['To'] = "" + para
-        password = "iljotyvyttakosoh"
+        password = ""
         msg.attach(MIMEText(body,'plain'))
 
         server = smtplib.SMTP('smtp.gmail.com',port=587)
